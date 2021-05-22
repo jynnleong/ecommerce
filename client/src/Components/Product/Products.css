@@ -1,0 +1,122 @@
+.products {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid black;
+}
+
+.products .products-description, .products .products-image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.products-noBorder {
+  border-bottom: none;
+}
+
+.products-info, .products-callToAction, .products-info-description {
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+
+.products-info-name-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.products-info-stock {
+  margin: 30px 0;
+  font-weight: 500;
+}
+
+.products-info-stock .products-info-stock-header {
+  font-size: 1.2rem;
+}
+
+.products-info-stock-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.products-info-stock-slider p {
+  margin: 10px 20px 0 0;
+}
+
+.products-info-stock-slider-decrease, .products-info-stock-slider-increase {
+  cursor: pointer;
+}
+
+.products-addToCart {
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  background: #b9f5a6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.products-info-description {
+  margin-top: 20px;
+}
+
+.products-info-description .products-info-description-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.products-info-description p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.products-image {
+  margin: 0 20px;
+}
+
+.products-image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .products {
+    display: block;
+  }
+  .products-info, .products-callToAction, .products-info-description {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+  }
+  .products-info-name-price {
+    font-size: 1.5rem;
+  }
+  .products-info-stock {
+    margin: 15px 0;
+  }
+  .products-addToCart {
+    font-size: 1.1rem;
+  }
+  .products-info-description .products-info-description-header {
+    font-size: 1.3rem;
+  }
+  .products-info-description p {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=Products.css.map */

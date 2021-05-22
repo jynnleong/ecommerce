@@ -1,0 +1,198 @@
+.slidebar {
+  height: 100vh;
+  width: 40vw;
+  background: black;
+  color: white;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.7s all ease;
+  transition: 0.7s all ease;
+}
+
+.slidebar-content {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slidebar-content-products {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.slidebar-content-products li {
+  text-align: left;
+  margin: 30px 0;
+  position: relative;
+  border-bottom: 2px solid white;
+  width: 60%;
+  padding: 20px;
+  -webkit-box-shadow: -1px 7px 9px -6px rgba(255, 255, 255, 0.83);
+          box-shadow: -1px 7px 9px -6px rgba(255, 255, 255, 0.83);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.slidebar-content-products li .fa-terminal {
+  height: 100%;
+  font-size: 1rem;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 5px;
+}
+
+.slidebar-content-products li:hover {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+.slidebar-content-products li:hover .fa-terminal {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slidebar-content-products li:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.slidebar-content-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.slidebar-content-cart-login {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 20px;
+}
+
+.slidebar-content-cart-login div {
+  margin: 10px 0;
+}
+
+.slidebar-content-exit {
+  padding: 20px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.showSlideBar {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@media screen and (max-width: 575px) {
+  .slidebar {
+    width: 50vw;
+  }
+  .slidebar-content-cart-login {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .slidebar-content-products li {
+    border-right: none;
+    -webkit-box-shadow: 0px 7px 9px -6px rgba(255, 255, 255, 0.83);
+            box-shadow: 0px 7px 9px -6px rgba(255, 255, 255, 0.83);
+    width: 70%;
+    font-size: 1rem;
+  }
+  .slidebar {
+    width: 55vw;
+  }
+}
+
+@-webkit-keyframes slideAnimation {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes listAnimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes listAnimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=SlideBar.css.map */

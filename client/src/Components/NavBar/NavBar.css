@@ -1,0 +1,138 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  height: 7vh;
+  font-weight: bold;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.navbar .navbar-title, .navbar .navbar-products, .navbar .navbar-cart-hamburger {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.navbar-title {
+  text-align: left;
+  margin: 0 20px;
+  font-size: 1.5rem;
+}
+
+.navbar-products-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.navbar-products-list li {
+  list-style: none;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.navbar-products-list li:hover::before {
+  content: '';
+  -webkit-animation: 0.7s listAnimation ease;
+          animation: 0.7s listAnimation ease;
+  width: 100%;
+  height: 2px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.navbar-cart-hamburger {
+  position: relative;
+  width: 100%;
+}
+
+.navbar-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+}
+
+.navbar-cart .navbar-cart-icon {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  margin: 0 3px;
+}
+
+.navbar-cart .navbar-cart-icon a {
+  cursor: pointer;
+}
+
+.navbar-cart p {
+  font-size: 0.8rem;
+}
+
+.navbar-hamburger {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.navbar-hamburger div {
+  width: 20px;
+  height: 2px;
+  background: black;
+  margin: 5px 0;
+  text-align: right;
+}
+
+@-webkit-keyframes listAnimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes listAnimation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-products-list li {
+    margin: 0 15px;
+  }
+}
+/*# sourceMappingURL=NavBar.css.map */

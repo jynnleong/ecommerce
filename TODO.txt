@@ -1,0 +1,16 @@
+Cart Implementation:
+
+    x - When "Add To Cart" button is clicked
+        x -> Function that cross checks if there is enough stock for the quantity desired
+            x -> Then we send {name, quantity, basePrice(for total amount calculation), image}
+                x -> Create a useState that triggers useEffect  (In Products.js)
+
+    x - useState for cart items retrieval = [] empty array
+        x -> Dynamically update the quantity of items in cart by checking the quantity of items in database in useEffect
+        
+
+[] Login / Signup 
+    [] Separate page
+        [] Include admin option? To post new products
+    
+[] 

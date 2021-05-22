@@ -1,0 +1,141 @@
+.slidebar{
+    height: 100vh;
+    width: 40vw;
+    background: black;
+    color: white;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: 0.7s all ease;
+}
+
+.slidebar-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slidebar-content-products{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    font-size: 1.2rem;
+    width: 100%;
+
+    li{
+        text-align: left;
+        margin: 30px 0;
+        position: relative;
+        border-bottom: 2px solid white;
+        width: 60%;
+        padding: 20px;
+        box-shadow: -1px 7px 9px -6px rgba(255,255,255,0.83);
+        display: flex;
+        transition: all 0.5s ease;
+        cursor: pointer;
+
+        .fa-terminal{
+            height: 100%;
+            font-size: 1rem;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+        }
+
+        &:hover{
+            background: white;
+            color: black;
+            border-radius: 5px;
+
+            .fa-terminal{
+                color: black;
+                display: flex;
+            }
+        }
+
+        &:active{
+            transform: scale(0.9);
+        }
+        
+    }
+}
+
+.slidebar-content-top{
+    display: flex;
+    width: 100%;
+}
+
+.slidebar-content-cart-login{
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+
+    div{
+        margin: 10px 0;
+    }
+}
+
+.slidebar-content-exit{
+    padding: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+
+.showSlideBar{
+    transform: translateX(0%);
+}
+
+
+@media screen and (max-width: 575px){
+    .slidebar{
+        width: 50vw;
+    }
+
+    .slidebar-content-cart-login{
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 390px){
+    .slidebar-content-products{
+        li{
+            border-right: none;
+            box-shadow: 0px 7px 9px -6px rgba(255,255,255,0.83);
+            width: 70%;
+            font-size: 1rem;
+        }
+    }
+    .slidebar{
+        width: 55vw;
+    }
+}
+
+@keyframes slideAnimation{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes listAnimation{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
