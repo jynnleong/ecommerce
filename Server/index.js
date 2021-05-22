@@ -17,7 +17,8 @@ connectDB();
 app.use("/products", productRouter);
 app.use("/cart", cartRouter);
 
+const port = process.env.PORT || 5000;
 
-app.listen(process.env.PORT, () => {
-    console.log(`Connected at port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Connected at port ${port}`);
 })
