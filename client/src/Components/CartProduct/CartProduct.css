@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-.disallow-decreasing {
+.disallow-decreasing, .disallow-increasing {
   pointer-events: none;
   cursor: default;
   opacity: 0.5;

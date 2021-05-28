@@ -28,9 +28,21 @@ router.post("/", async (req, res) => {
 })
 
 // PUT REQUESTS
-router.put("/updateCart/:id", async (req, res) => {
+router.put("/updateCart/quantity/:id", async (req, res) => {
+
     try {
         const updateProductInCart = await Cart.updateOne({"_id": req.params.id}, {"quantity": req.body.quantity});
+
+        res.send(updateProductInCart);
+    } catch (error) {
+        console.error(error.message);
+    }
+})
+
+router.put("/updateCart/stock/:id", async (req, res) => {
+
+    try {
+        const updateProductInCart = await Cart.updateOne({"_id": req.params.id}, {"stock": req.body.stock});
 
         res.send(updateProductInCart);
     } catch (error) {

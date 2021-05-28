@@ -1,0 +1,150 @@
+.checkout{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 5% 95%;
+    background-color: #ebc491;
+}
+
+.checkout-logo{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.checkout-main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+}
+
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+
+    button{
+        width: 90%;
+        margin-top: 20px;
+        padding: 15px;
+        border: none;
+        border-radius: 50px;
+        background: rgb(185, 245, 166);
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+}
+
+.checkout-form-information{
+    padding: 20px;
+    text-align: left;
+
+    p{
+        margin-top: 5px;
+    }
+}
+
+
+.checkout-form-name, .checkout-form-email{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    label{
+        text-align: left;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 2px 0;
+    }
+
+    input{
+        border-radius: 50px;
+        border: none;
+        padding: 10px 20px;
+        width: 80%;
+        background: #cd853f;
+        transition: all 0.5s ease;
+        font-weight: 500;
+        font-size: 1.1rem;
+        
+        &:focus{
+            outline: none;
+            border: 1px solid white;
+        }
+    }
+}
+
+.checkout-form-shipping{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+}
+
+.checkout-form-shipping-information{
+    display: flex;
+    flex-direction: column;
+
+    label{
+        margin: 10px 0 3px 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    input{
+        border-radius: 50px;
+        border: none;
+        padding: 10px 20px;
+        width: 80%;
+        background: #cd853f;
+        transition: all 0.5s ease;
+        font-weight: 500;
+        font-size: 1.1rem;
+        
+        &:focus{
+            outline: none;
+            border: 1px solid white;
+        }
+    }
+}
+
+.checkout-form-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width:918px){
+    .checkout{
+        height: 100%;
+    }
+
+    .checkout-main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .checkout-form-shipping-information{
+        input{
+            font-size: 0.8rem;
+        }
+    }
+    
+
+    .checkout-form{
+        button{
+            font-size: 0.8rem;
+        }
+    }
+    
+}

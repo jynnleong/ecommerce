@@ -2,7 +2,7 @@ import './Products.css';
 import { useState } from 'react';
 import { getProductsFromCart, addProductsToCart, updateProductsInCart } from '../../API/API';
 
-const Products = ({name, price, stock, image, description, last, setCartQuantity}) => {
+const Products = ({name, price, stock, image, description, last, id, setCartQuantity}) => {
 
     let productsClass = ["products"];
 
@@ -10,6 +10,7 @@ const Products = ({name, price, stock, image, description, last, setCartQuantity
         productsClass.push("products-noBorder");
     }
 
+    
 
     let [quantityCount, setQuantityCount] = useState(1);
 
@@ -32,7 +33,7 @@ const Products = ({name, price, stock, image, description, last, setCartQuantity
         for(var key in products){
             if(products[key].name === name){
                 const updateQuantity = products[key].quantity + quantityCount;
-                const response = await updateProductsInCart(products[key]._id, updateQuantity);
+                const response = await updateProductsInCart(products[key]._id, updateQuantity, "quantity");
                 console.log(response);
                 setCartQuantity(cartQuantity => cartQuantity + quantityCount);
                 setQuantityCount(1);
@@ -45,7 +46,8 @@ const Products = ({name, price, stock, image, description, last, setCartQuantity
             price: price,
             quantity: quantityCount,
             stock: stock,
-            image: image
+            image: image,
+            productID: id
         }
         
 
@@ -54,8 +56,22 @@ const Products = ({name, price, stock, image, description, last, setCartQuantity
         setCartQuantity(cartQuantity => cartQuantity + quantityCount);
         setQuantityCount(1);
 
-
     }
+
+    let decreaseProductClass = ["products-info-stock-slider-decrease"];
+    if(quantityCount === 1){
+        decreaseProductClass.push("disallow-decrease");
+    }
+    let increaseProductClass = ["products-info-stock-slider-increase"];
+    if(quantityCount === stock){
+        increaseProductClass.push("disallow-increase");
+    }
+
+    if(stock === 0){
+        decreaseProductClass.push("disallow-decrease");
+        increaseProductClass.push("disallow-increase");
+    }
+    
 
     return(
         <div className={productsClass.join(" ")}>
@@ -71,9 +87,9 @@ const Products = ({name, price, stock, image, description, last, setCartQuantity
                     <div className="products-info-stock">
                         <p className="products-info-stock-header">Quantity</p>
                         <div className="products-info-stock-slider">
-                            <p onClick={decreaseQuantityCount}className="products-info-stock-slider-decrease">-</p>
+                            <p onClick={decreaseQuantityCount}className={decreaseProductClass.join(" ")}>-</p>
                             <p className="products-info-stock-slider-count">{quantityCount}</p>
-                            <p onClick={increaseQuantityCount} className="products-info-stock-slider-increase">+</p>
+                            <p onClick={increaseQuantityCount} className={increaseProductClass.join(" ")}>+</p>
                         </div>
                     </div>
                 </div>

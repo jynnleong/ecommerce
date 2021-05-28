@@ -93,6 +93,12 @@
   max-width: 100%;
 }
 
+.disallow-increase, .disallow-decrease {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 700px) {
   .products {
     display: block;

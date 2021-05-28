@@ -1,0 +1,176 @@
+.checkout {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 5% 95%;
+      grid-template-rows: 5% 95%;
+  background-color: #ebc491;
+}
+
+.checkout-logo {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.checkout-logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.checkout-main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  padding: 10px;
+}
+
+.checkout-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.checkout-form button {
+  width: 90%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background: #b9f5a6;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.checkout-form-information {
+  padding: 20px;
+  text-align: left;
+}
+
+.checkout-form-information p {
+  margin-top: 5px;
+}
+
+.checkout-form-name, .checkout-form-email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0;
+}
+
+.checkout-form-name label, .checkout-form-email label {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+.checkout-form-name input, .checkout-form-email input {
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+  width: 80%;
+  background: #cd853f;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.checkout-form-name input:focus, .checkout-form-email input:focus {
+  outline: none;
+  border: 1px solid white;
+}
+
+.checkout-form-shipping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  padding: 20px;
+}
+
+.checkout-form-shipping-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.checkout-form-shipping-information label {
+  margin: 10px 0 3px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.checkout-form-shipping-information input {
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+  width: 80%;
+  background: #cd853f;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.checkout-form-shipping-information input:focus {
+  outline: none;
+  border: 1px solid white;
+}
+
+.checkout-form-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 918px) {
+  .checkout {
+    height: 100%;
+  }
+  .checkout-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .checkout-form-shipping-information input {
+    font-size: 0.8rem;
+  }
+  .checkout-form button {
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=CheckOut.css.map */

@@ -1,12 +1,20 @@
 import "./Cart.css";
 import CartProduct from "../CartProduct/CartProduct";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Cart = ({setProductQuantity, setIDProductDeleted, removeProductFromCart, cartProducts, toggleCart, showCart, setCartID, updateCart, cartQuantity, cartTotal}) => {
+const Cart = ({removeProductFromCart, cartProducts, toggleCart, showCart, updateCart, cartQuantity, cartTotal}) => {
     
     let cartClass = ["cart"];
 
     if(showCart){
         cartClass.push("showCart");
+    }
+
+    let cartFooterClass = ["cart-footer"];
+
+    if(cartProducts.length === 0){
+        cartFooterClass.push("empty-cart");
     }
     
 
@@ -20,21 +28,29 @@ const Cart = ({setProductQuantity, setIDProductDeleted, removeProductFromCart, c
             </div>
             <div className="cart-body">
                 {
+                    cartProducts.length === 0 ? <h1 className="cart-body-noproducts">No products in cart</h1> : 
                     cartProducts.map(product => (
-                        <CartProduct updateCart={updateCart} setCartID={setCartID} setProductQuantity={setProductQuantity} removeProductFromCart={removeProductFromCart} setIDProductDeleted={setIDProductDeleted} id={product._id} name={product.name} price={product.price} image={product.image} quantity={product.quantity}/>
+                        <CartProduct stock={product.stock} updateCart={updateCart} removeProductFromCart={removeProductFromCart} id={product._id} name={product.name} price={product.price} image={product.image} quantity={product.quantity}/>
                     ))
                 }
             </div>
-            <div className="cart-footer">
+            <div className={cartFooterClass.join(" ")}>
                 <div className="cart-footer-total">
                     Cart Total: $ {cartTotal}
                 </div>
-                <button className="cart-footer-checkout">
-                    Checkout 
-                </button>
+                <Link to="/cart/checkout">
+                    <button className="cart-footer-checkout">
+                        Checkout 
+                    </button>
+                </Link>
             </div>
+            
         </div>
+
+    
     )
 }
+
+
 
 export default Cart;

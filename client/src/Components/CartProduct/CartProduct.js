@@ -2,7 +2,7 @@ import "./CartProduct.css";
 import { useState } from 'react';
 import { updateProductsInCart } from '../../API/API';
 
-const CartProduct = ({quantity, price, image, name, id, removeProductFromCart, updateCart}) => {
+const CartProduct = ({quantity, price, image, name, id, stock, removeProductFromCart, updateCart}) => {
 
     const totalPricePerProduct = Math.round(quantity * price);
 
@@ -12,6 +12,12 @@ const CartProduct = ({quantity, price, image, name, id, removeProductFromCart, u
         cartProductInformationQuantityClass.push("disallow-decreasing")
     }
 
+    let cartProductInformationIncreaseQuantityClass = ["cart-product-information-quantity-increase"];
+
+    if(quantity === stock){
+        cartProductInformationIncreaseQuantityClass.push("disallow-increasing")
+    }
+    
     const removeProduct = () => {
         removeProductFromCart(id);
     }

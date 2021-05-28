@@ -83,11 +83,25 @@
   font-size: 1.2rem;
   font-weight: bold;
   background: #b9f5a6;
-  width: 70%;
+  width: 100%;
   padding: 10px;
   border-radius: 50px;
   border: none;
-  margin: auto;
+  cursor: pointer;
+}
+
+.empty-cart a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.empty-cart button {
+  opacity: 0.5;
+}
+
+.cart-body-noproducts {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 @media screen and (max-width: 768px) {
