@@ -1,7 +1,6 @@
-const API_URL = "http://localhost:5000";
 
 export const getProducts = async () => {
-    const products = await fetch(`${API_URL}/products`);
+    const products = await fetch(`/products`);
     return products.json();
 }
 
@@ -11,7 +10,7 @@ export const updateProductsStock = async (id, quantity) => {
         "stock": quantity
     };
     
-    const products = await fetch(`${API_URL}/products/updateProduct/stock/${id}`, {
+    const products = await fetch(`/products/updateProduct/stock/${id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -41,12 +40,12 @@ export const updateProductsStock = async (id, quantity) => {
 }
 
 export const getProductsFromCart = async () => {
-    const products = await fetch(`${API_URL}/cart`);
+    const products = await fetch(`/cart`);
     return products.json();
 }
 
 export const addProductsToCart = async (entry) => {
-    const products = await fetch(`${API_URL}/cart`, {
+    const products = await fetch(`/cart`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -83,7 +82,7 @@ export const updateProductsInCart = async (entryID, entryQuantity) => {
         "quantity": entryQuantity
     };
     
-    const products = await fetch(`${API_URL}/cart/updateCart/quantity/${entryID}`, {
+    const products = await fetch(`/cart/updateCart/quantity/${entryID}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -118,7 +117,7 @@ export const updateProductsStockInCart = async (entryID, stock) => {
         "stock":stock
     };
 
-    const products = await fetch(`${API_URL}/cart/updateCart/stock/${entryID}`, {
+    const products = await fetch(`/cart/updateCart/stock/${entryID}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -148,7 +147,7 @@ export const updateProductsStockInCart = async (entryID, stock) => {
 }
 
 export const deleteProductFromCart = async (id) => {
-    const deleteResponse = await fetch(`${API_URL}/cart/${id}`, {
+    const deleteResponse = await fetch(`/cart/${id}`, {
         method: 'DELETE',
         headers:{
             'content-type': 'application/json'
@@ -177,7 +176,7 @@ export const deleteProductFromCart = async (id) => {
 }
 
 export const clearCart = async () => {
-    const deleteResponse = await fetch(`${API_URL}/cart`, {
+    const deleteResponse = await fetch(`/cart`, {
         method: 'DELETE',
         headers:{
             'content-type': 'application/json'

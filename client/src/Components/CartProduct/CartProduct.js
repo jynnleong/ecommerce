@@ -9,15 +9,15 @@ const CartProduct = ({quantity, price, image, name, id, stock, removeProductFrom
     let cartProductInformationQuantityClass = ["cart-product-information-quantity-decrease"];
 
     if(quantity === 1){
-        cartProductInformationQuantityClass.push("disallow-decreasing")
+        cartProductInformationQuantityClass.push("disallow-decreasing");
     }
 
     let cartProductInformationIncreaseQuantityClass = ["cart-product-information-quantity-increase"];
 
     if(quantity === stock){
-        cartProductInformationIncreaseQuantityClass.push("disallow-increasing")
+        cartProductInformationIncreaseQuantityClass.push("disallow-increasing");
     }
-    
+
     const removeProduct = () => {
         removeProductFromCart(id);
     }
@@ -46,7 +46,7 @@ const CartProduct = ({quantity, price, image, name, id, stock, removeProductFrom
                 <div className="cart-product-information-quantity">
                     <p onClick={decreasingCart} className={cartProductInformationQuantityClass.join(" ")}>-</p>
                     <p className="cart-product-information-quantity-display">{quantity}</p>
-                    <p onClick={increasingCart} className="cart-product-information-quantity-increase">+</p>
+                    <p onClick={increasingCart} className={cartProductInformationIncreaseQuantityClass.join(" ")}>+</p>
                 </div>
             </div>
             <div className="cart-product-total">
