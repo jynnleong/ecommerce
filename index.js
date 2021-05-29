@@ -10,9 +10,9 @@ const cartRouter = require('./Routes/Cart');
 const app = express();
 
 app.use(express.json());
-app.use(cors(
-    {origin: process.env.CORS_ORIGIN}
-))
+// app.use(cors(
+//     {origin: process.env.CORS_ORIGIN}
+// ))
 
 
 
@@ -22,8 +22,6 @@ app.use("/products", productRouter);
 app.use("/cart", cartRouter);
 
 const port = process.env.PORT || 5000;
-
-
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
