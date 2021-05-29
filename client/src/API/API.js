@@ -1,4 +1,5 @@
 
+
 export const getProducts = async () => {
     const products = await fetch(`/products`);
     return products.json();
