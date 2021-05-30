@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://ecommerce-personal-api.herokuapp.com";
 
 export const getProducts = async () => {
     const products = await fetch(`${API_URL}/products`);
